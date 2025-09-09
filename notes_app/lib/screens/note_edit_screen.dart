@@ -41,20 +41,28 @@ class _NoteEditScreenState extends State<NoteEditScreen> {
             children: [
               TextFormField(
                 controller: _titleCtrl,
-                decoration: const InputDecoration(labelText: 'Titre'),
+                decoration: const InputDecoration(
+                  labelText: 'Titre',
+                  hintText: 'Entrez le titre de la note',
+                  border: OutlineInputBorder(),
+                ),
                 validator: (v) =>
                     (v == null || v.isEmpty) ? 'Le titre est requis' : null,
               ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: TextFormField(
-                  controller: _contentCtrl,
-                  decoration: const InputDecoration(labelText: 'Contenu'),
-                  maxLines: null,
-                  expands: true,
-                  keyboardType: TextInputType.multiline,
+              const SizedBox(height: 20),
+
+              TextFormField(
+                controller: _contentCtrl,
+                decoration: const InputDecoration(
+                  labelText: 'Contenu',
+                  hintText: 'Entrez le contenu de la note',
+                  border: OutlineInputBorder(),
                 ),
+                maxLines: 10,
+                //expands: true,
+                keyboardType: TextInputType.multiline,
               ),
+              const SizedBox(height: 20),
               Row(
                 children: [
                   ElevatedButton(

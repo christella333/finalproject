@@ -29,7 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
 
     try {
-      await UserDatabase.insertUser(User(username: "viho", password: "1234"));
+      await UserDatabase.instance.insertUser(username, password);
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Inscription réussie ! Connectez-vous.")),
