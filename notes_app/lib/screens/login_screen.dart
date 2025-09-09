@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
       return;
     }
 
-    final user = await UserDatabase.instance.getUser(username, password);
+    final user = await UserDatabase.getUser(username, password);
 
     if (user != null) {
       // Connexion réussie
